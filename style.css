@@ -1,5 +1,4 @@
 ﻿/* Reset default styles */
-
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +15,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* Header */
 
+/* Header */
 header {
     background: black;
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 nav ul {
@@ -62,7 +64,7 @@ header h1 {
 
 .header__left {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
     .header__left img {
@@ -72,28 +74,26 @@ header h1 {
 
 .header__right {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
     .header__right img {
         width: 90px;
         height: 90px;
     }
-/*Sections*/
 
-/*section 1*/
-/*left*/
-
+/* Section */
 .section {
     padding: 60px 0;
     background: linear-gradient(to bottom right, #FFFF00, #000000, #AA0000);
 }
 
 .section__wrap {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 100px; /* spacing between items (increase if you want even more) */
+    align-items: start; /* keeps tops aligned */
+    justify-items: center; /* centers each item inside its grid cell */
 }
 
     .section__wrap img {
@@ -107,6 +107,7 @@ header h1 {
         margin-bottom: 5px;
     }
 
+/* Section Left */
 .section__item__left {
     display: flex;
     flex-direction: column;
@@ -114,17 +115,55 @@ header h1 {
     background: linear-gradient(180deg, #0b0b0b, #1a0000);
 }
 
+.section__left__upper p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #BBBBBB;
+    text-align: center;
+}
 
-.section__lower {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.section__left__upper h2 {
+    color: #FF2222;
+    text-shadow: 0 0 2px black, 0 0 3px #FF2222;
+    text-align: center;
 }
 
 .section__left__text {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+    .section__left__text a {
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #FF2222;
+        text-shadow: 0 0 2px black, 0 0 3px #FF2222;
+        text-decoration: none;
+        transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+    }
+
+        .section__left__text a:hover {
+            color: #FF5555;
+            text-shadow: 0 0 3px black, 0 0 5px #FF5555;
+            box-shadow: 0 0 5px #AA0000, 0 0 10px #FF3333;
+        }
+
+    .section__left__text p {
+        font-size: 0.75rem;
+        color: #AAAAAA;
+        font-style: italic;
+        letter-spacing: 1px;
+        margin-top: 3px;
+        text-align: center;
+    }
+
+.section__lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sin__icon__red {
@@ -135,84 +174,125 @@ header h1 {
 }
 
 button {
-    background: none; 
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
-.section__left__upper p {
+    button:hover .sin__icon__red {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 0 5px #FF5555, 0 0 10px #AA0000;
+        transition: transform 0.3s;
+    }
+
+/* Section Middle */
+.section__item__middle {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background: linear-gradient(180deg, #0f0f0f, #050505);
+}
+
+.section__middle__upper p {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #BBBBBB;
+    text-align: center;
 }
 
-.section__left__upper h2 {
-    color: #FF2222;
-    text-shadow: 0 0 2px black, 0 0 3px #FF2222;
+.section__middle__upper h2 {
+    color: #EEEEEE;
+    text-shadow: 0 0 2px #111111, 0 0 4px #777777;
+    text-align: center;
 }
 
-button:hover .sin__icon__red {
-    transform: scale(1.1) rotate(10deg);
-    transition: transform 0.3s;
-}
-
-.section__left__text a {
+.section__middle__text a {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #FF2222;
-    text-shadow: 0 0 2px black, 0 0 3px #FF2222;
+    color: #DDDDDD;
+    text-shadow: 0 0 2px black, 0 0 3px #AAAAAA;
     text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
 }
 
-    .section__left__text a:hover {
-        color: #FF5555;
-        text-shadow: 0 0 3px black, 0 0 5px #FF5555;
-        box-shadow: 0 0 5px #AA0000, 0 0 10px #FF3333; 
+    .section__middle__text a:hover {
+        color: #FFFFFF;
+        text-shadow: 0 0 3px black, 0 0 5px #CCCCCC;
+        box-shadow: 0 0 5px #AAAAAA, 0 0 10px #CCCCCC;
     }
 
-.section__left__text p {
+.section__middle__text p {
     font-size: 0.75rem;
     color: #AAAAAA;
     font-style: italic;
     letter-spacing: 1px;
     margin-top: 3px;
+    text-align: center;
 }
 
-/*section 1*/
-/*right*/
+.sin__icon__grey {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+    background-color: #CCCCCC;
+}
 
+    .sin__icon__grey:hover {
+        animation: pulseGrey 0.6s ease-in-out infinite alternate;
+        box-shadow: 0 0 5px #CCCCCC, 0 0 10px #888888;
+    }
+
+@keyframes pulseGrey {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Section Right */
 .section__item__right {
     display: flex;
     flex-direction: column;
     gap: 55px;
     background: linear-gradient(180deg, #0b0b0b, #1a1a00);
 }
+
 .section__right__upper p {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #BBBBBB;
+    text-align: center;
 }
 
 .section__right__upper h2 {
-    color: #FFFF22; 
-    text-shadow: 0 0 2px black, 0 0 3px #FFFF66; 
+    color: #FFFF22;
+    text-shadow: 0 0 2px black, 0 0 3px #FFFF66;
+    text-align: center;
 }
 
 .section__right__text a {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #FFFF22; 
+    color: #FFFF22;
     text-shadow: 0 0 2px black, 0 0 3px #FFFF22;
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
 }
 
     .section__right__text a:hover {
-        color: #FFFF66; 
+        color: #FFFF66;
         text-shadow: 0 0 3px black, 0 0 5px #FFFF66;
         box-shadow: 0 0 5px #CCCC00, 0 0 10px #FFFF33;
     }
@@ -223,7 +303,9 @@ button:hover .sin__icon__red {
     font-style: italic;
     letter-spacing: 1px;
     margin-top: 3px;
+    text-align: center;
 }
+
 .sin__icon__yellow {
     width: 30px !important;
     height: 30px !important;
@@ -231,12 +313,11 @@ button:hover .sin__icon__red {
     background-color: #FFFF22;
 }
 
-.sin__icon__yellow:hover { 
-    transform: scale(1.15) rotate(-10deg); 
-    transition: transform 0.3s;
-}
-
-
+    .sin__icon__yellow:hover {
+        transform: scale(1.15) rotate(-10deg);
+        box-shadow: 0 0 5px #FFFF66, 0 0 10px #CCCC00;
+        transition: transform 0.3s;
+    }
 
 /* Footer */
 footer {
