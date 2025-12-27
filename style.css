@@ -111,15 +111,8 @@ header h1 {
 .section__item__top {
     padding: 16px;
     text-align: left;
-}
-
-.section__item__top {
     width: 100%;
-    height: auto;
     display: block;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    margin-bottom: 12px;
 }
 
 .section__item p {
@@ -284,7 +277,8 @@ header h1 {
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     margin-bottom: 12px;
-    object-fit: fill;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
 }
 
 /*Services*/
@@ -315,16 +309,18 @@ header h1 {
     flex-direction: column;
     align-items: center;
     color: #ffdddd;
+    text-decoration: none;
 }
 
-    .services__item a img {
+    .services__item  img {
         width: 69px;
         filter: drop-shadow(0 0 10px #ff1a1a);
         transition: transform 0.3s ease, filter 0.3s ease;
         cursor: pointer;
+        text-decoration: none;
     }
 
-        .services__item a img:hover {
+        .services__item  img:hover {
             transform: scale(1.1);
             filter: drop-shadow(0 0 15px #ff4444);
         }
@@ -358,46 +354,37 @@ header h1 {
     text-align: center;
 }
 
-.services__item button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    margin-top: 12px;
+.services__item span {
+    display: inline-block;
+    margin: 12px 0 18px;
+    padding: 10px 22px;
+
     background: linear-gradient(145deg, #0b0000, #1a0000);
     border: 2px solid #ff0000;
     border-radius: 8px;
-    cursor: pointer;
+
     color: #ff4d4d;
     font-weight: bold;
-    font-family: 'Segoe UI', sans-serif;
-    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333;
-    margin-bottom: 20px;
+
+    box-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff1a1a,
+        0 0 18px #ff3333;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-    .services__item button:hover {
-        transform: scale(1.08) rotate(-1deg);
-        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff1a1a, 0 0 30px #ff4d4d, 0 0 40px #ff6666;
-        background: linear-gradient(145deg, #1a0000, #330000);
-        border-color: #ff4d4d;
-        animation: neonPulse 1s infinite alternate;
-    }
-
-@keyframes neonPulse {
-    0% {
-        text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff3333, 0 0 15px #ff1a1a;
-    }
-
-    50% {
-        text-shadow: 0 0 10px #ff6666, 0 0 20px #ff4d4d, 0 0 30px #ff3333;
-    }
-
-    100% {
-        text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff3333, 0 0 15px #ff1a1a;
-    }
+.services__item span:hover {
+    transform: scale(1.08);
+    background: linear-gradient(145deg, #1a0000, #330000);
+    box-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff1a1a,
+        0 0 35px #ff4d4d;
 }
 
 /* Footer */
